@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TVDates</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta name="viewport" content="width=device-width, initialscale = 1.0, user-scalable=yes">
+
+  </head>
+
+  <body>
+    <h1 style="color: red;">{{doc}}</h1>
+    <!-- <div class="container">
+      <div class="navbar">
+        <div class="mbuttons">
+          <h1><a href="#" id="title">TVDates</a></h1>
+          <a class="button">TV shows</a>
+        </div>
+      </div> -->
+      {{> header}}
+      <div class="content">
+        <div class="show-info">
+          <table>
+            <thead>
+              <tr>
+                <th>Show Name</th>
+                <th>Season | Episode</th>
+                <th>Days Until Release</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each show}}
+
+              <tr>
+                <td onclick="window.location='/shows/{{this._id}}'">{{this.showData.show_name}}</td>
+                <td onclick="window.location='/shows/{{this._id}}'">{{this.showData.seasons.[5].[13].airdate}}</td>
+                <td onclick="window.location='/shows/{{this._id}}'">{{daysUntilShow this.showData.seasons.[2].[1].airdate}} days left ({{this.showData.seasons.[2].[1].airdate}})</td>
+              </tr>
+            </a>
+
+
+              {{/each}}
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
